@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addTodo, removeOne, clearTodo } from './features/todoSlice'
+import { addToDo, removeOne, clearToDo}  from './features/todoSlice'
+
 
 function Todo() {
     const items = useSelector((state) => state.todos.items)
@@ -11,7 +12,7 @@ function Todo() {
 
     const submitForm = (e) => {
         e.preventDefault()
-        dispatch(addTodo(input))
+        dispatch(addToDo(input))
     }
 
     return (
@@ -23,7 +24,7 @@ function Todo() {
             <ul>
                 {renderItems}
             </ul>
-            <button onClick={() => dispatch(clearTodo())}>Clear</button>
+            <button onClick={() => dispatch(clearToDo())}>Clear</button>
         </div>
     )
 }
