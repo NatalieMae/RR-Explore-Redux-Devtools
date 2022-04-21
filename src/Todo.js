@@ -24,7 +24,7 @@ function Todo() {
             <ul>
                 {renderItems}
             </ul>
-            <button onClick={() => dispatch(clearToDo())}>Clear</button>
+            <button onClick={() => dispatch(clearToDo(items))}>Clear</button>
         </div>
     )
 }

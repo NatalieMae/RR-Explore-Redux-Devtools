@@ -5,7 +5,7 @@ const initialState = {
 }
 
 export const todoSlice = createSlice({
-    name: 'counter',
+    name: 'todos',
     initialState,
     reducers: {
         addToDo: (state, action) => {
@@ -20,9 +20,9 @@ export const todoSlice = createSlice({
                     return { items: array }
                 }
         }, 
-        clearToDo: () => {
-            return { todo:[] }
-        }
+        clearToDo: (state, action) => {
+            return { todo:[...state.items, action.onClick] } //this allows the item added to be removed by click on it 
+        }                                                      //But the clear button itself errors out 
     }
 })
 
